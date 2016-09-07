@@ -1,7 +1,6 @@
 import mdp
 import numpy as np
 import Oger
-import csv
 
 def keep_max_for_each_time_step_with_default(input_signal, default_min_value=-1):
     # get the maximum for each line (= each time step)
@@ -42,18 +41,13 @@ class ThematicRoleError(object):
         self.error_measure = error_measure
         self.threshold = threshold
 
-        if not self.corpus=="90k":
-            #use this for corpus 462 and 90k
-            self.nv_pairs = [('N1','V1'), ('N1','V2'), ('N2','V1'), ('N2','V2'),
-                             ('N3','V1'), ('N3','V2'), ('N4','V1'), ('N4','V2')]
-        else:
-            # for corpus 90k
-            self.nv_pairs = [('N1','V1'), ('N1','V2'), ('N2','V1'), ('N2','V2'),
-                             ('N3','V1'), ('N3','V2'), ('N4','V1'), ('N4','V2'),
-                             ('N5','V1'),('N5','V2')]
+
+        self.xa_pairs = [('X1','A1'), ('X1','A2'), ('X2','A1'), ('X2','A2'),
+                         ('X3','A1'), ('X3','A2'), ('X4','A1'), ('X4','A2'),
+                         ('X5','A1'), ('X5','A2'), ('X6','A1'), ('X6','A2'),
+                         ('X7','A1'), ('X7','A2')]
 
         self.verbose = verbose
-        self._check_output_version()
         self.__initialize_error_algorithm()
 
     def __initialize_error_algorithm(self):
@@ -66,19 +60,6 @@ class ThematicRoleError(object):
         self.time_step_slice = slice(-1,None)
         self.max_answers = self._get_max_answers()
 
-    def _check_output_version(self):
-        if not(self.unique_labels):
-            print "!!! WARNING: io dictionary has no 'l_output' entry, version of output could not be checked. !!!"
-
-        elif self.corpus!='90k' and self.unique_labels != ['N1-A1','N1-O1','N1-R1','N1-A2','N1-O2','N1-R2','N2-A1','N2-O1','N2-R1','N2-A2','N2-O2','N2-R2',
-                                                           'N3-A1','N3-O1','N3-R1','N3-A2','N3-O2','N3-R2','N4-A1','N4-O1','N4-R1','N4-A2','N4-O2','N4-R2']:
-            raise Exception, "Output Coding is not the same as expected"
-
-        elif self.corpus=='90k' and self.unique_labels != ['N1-A1','N1-O1','N1-R1','N1-A2','N1-O2','N1-R2','N2-A1','N2-O1','N2-R1','N2-A2','N2-O2','N2-R2',
-                                                           'N3-A1','N3-O1','N3-R1','N3-A2','N3-O2','N3-R2','N4-A1','N4-O1','N4-R1','N4-A2','N4-O2','N4-R2',
-                                                           'N5-A1','N5-O1','N5-R1','N5-A2','N5-O2','N5-R2']:
-            raise Exception, "Output Coding is not the same as expected"
-
     def _get_max_answers(self):
         """
         Return the maximal number of answer for one sentence.
@@ -88,91 +69,72 @@ class ThematicRoleError(object):
         return max([len(x) for x in self.labels])
 
 
-    def _get_NVassoc_sliced(self, input_signal, target_signal, verbose=False):
+    def _get_XAassoc_sliced(self, input_signal, target_signal, verbose=False):
         """
         Output:
-            (NVassoc_admiting_anwser, NVassoc_not_present_in_sent)
+            (XAassoc_admiting_anwser, XAassoc_not_present_in_sent)
             Each element of this tuple is a list. Each element of a list is a 3-tuple:
-                - 1st: index of the Noun-Verb association in the 'self.nv_pairs' list of tuples
+                - 1st: index of the Noun-Verb association in the 'self.xa_pairs' list of tuples
                 - 2nd: sub-matrix (sub-numpyarray) of the input_signal that will be used by error_measure
                 - 3rd: sub-matrix (sub-numpyarray) of the teacher_signal that will be used by error_measure
         !Warning: this method rely on a specific way of coding the output signal.
             If this coding is changed, you may have to recode most of this method.
         Notation:
-            Nva: Noun-Verb association
+            XAa: SW-A association
         NB: some precisions on what is the problem that have to deal the algorithm:
-            It should infer which NVa-s (Noun-Verb association) are present in the sentence
+            It should infer which XAa-s (SW-A association) are present in the sentence
             -- this means inferring how many Open Class Words (~Nouns) and how many meanings
              there is by looking to the teacher output signals --,
             In this method we do it by inferring from the target_signal (because the input corpus is not available).
         """
-        ## The Noun-Verb associations (i.e. full AOR for a given noun respect to a given verb)
-        ##    that admit answer are the NVassoc that have at the same time
-        ##    Noun and Verb with one teacher at 1 (one of the AOR for the NVassoc).
-        ##    The different NVassoc possible are given by self.nv_pairs.
+        ## The Noun-Verb associations (i.e. full PSL for a given SW respect to a given verb)
+        ##    that admit answer are the XAassoc that have at the same time
+        ##    Noun and Verb with one teacher at 1 (one of the AOR for the XAassoc).
+        ##    The different XAassoc possible are given by self.xa_pairs.
         if verbose:
-            print "<<< Beginning method _get_NVassoc_sliced():"
+            print "<<< Beginning method _get_XAassoc_sliced():"
             print "self.time_step_slice", self.time_step_slice
 
-        ## check if this version of error computation is ok with the way output is coded
-        self._check_output_version()
+        ## creating XAassoc
+        xa_contributing_and_present_in_sentence = [] # what all sw-action pair are present in the sentence
+        XAassoc_contributing_anwser = [] # what all sw-action are above threshold i.e comptetor for final role
+        XAassoc_not_contributing_answer = [] # what all sw-action are below threshold and not present in the sentence i.e. not a competetor for role assingment
 
-        ## creating NVassoc
-        n_v_contributing_and_present_in_sentence = [] # what all noun-verb pair are present in the sentence
-        NVassoc_contributing_anwser = [] # what all noun-verb are above threshold i.e comptetor for final role
-        NVassoc_not_contributing_answer = [] # what all noun-verb are below threshold and not present in the sentence i.e. not a competetor for role assingment
-
-        # Finding which Nouns, Verbs and association of Noun-Verb are present in the sentence.
-        # Here 3 at the end represent the no of roles for a noun wrt to v
-        for idx in range(0,len(self.unique_labels),3):
-            NVindex = int(idx/3)
-            NVassoc_tuple = (NVindex, input_signal[self.time_step_slice, idx:idx+3], target_signal[self.time_step_slice, idx:idx+3])
+        # Finding which SW, Action and association of sw-action are present in the sentence.
+        # Here 3 at the end represent the no of roles for a sw wrt to action
+        for idx in range(0,len(self.unique_labels),4):
+            XAindex = int(idx/4)
+            XAassoc_tuple = (XAindex, input_signal[self.time_step_slice, idx:idx+4], target_signal[self.time_step_slice, idx:idx+4])
 
             #check if activatiion of a role wrt to noun and corresoponding verb is above threshold or not
-            if mdp.numx.any(target_signal[self.time_step_slice, idx:idx+3] > self.threshold): # the non-1 signal could be 0 or -1 (so np.any() is not sufficient)
-                # add the current NVassoc to the list
-                NVassoc_contributing_anwser.append(NVassoc_tuple)
+            if mdp.numx.any(target_signal[self.time_step_slice, idx:idx+4] > self.threshold): # the non-1 signal could be 0 or -1 (so np.any() is not sufficient)
+                # add the current XAassoc to the list
+                XAassoc_contributing_anwser.append(XAassoc_tuple)
                 # add the noun and the verb to the list of Noun and Verb present in the sentence (will be used later) there will be duplicate, but this is not an issue
-                n_v_contributing_and_present_in_sentence.extend(self.nv_pairs[NVindex])
+                xa_contributing_and_present_in_sentence.extend(self.xa_pairs[XAindex])
             else:
-                NVassoc_not_contributing_answer.append(NVassoc_tuple)
+                XAassoc_not_contributing_answer.append(XAassoc_tuple)
 
-        ## create list of NVassoc_not_contributing_answer but present in the sentence
-        NVassoc_not_contributing_answer_but_present = []
-        NVassoc_not_present_in_sentence = []
+        ## create list of XAassoc_not_contributing_answer but present in the sentence
+        XAassoc_not_contributing_answer_but_present = []
+        XAassoc_not_present_in_sentence = []
 
-        # for each NVassoc_tuple in NVassoc_not_contributing_answer
-        for NVassoc_tuple in NVassoc_not_contributing_answer:
-            # if its Noun (i.e. self.nv_pairs[NVassoc_tuple[0]][0]) or its Verb (i.e. self.nv_pairs[NVassoc_tuple[0]][1]) is not present in the sentence
-            if n_v_contributing_and_present_in_sentence.count(self.nv_pairs[NVassoc_tuple[0]][0])==0 \
-                or n_v_contributing_and_present_in_sentence.count(self.nv_pairs[NVassoc_tuple[0]][1])==0:
-                # put it in a new list containing the NVa not present in sentence
-                NVassoc_not_present_in_sentence.append(NVassoc_tuple)
-                # if N and V are present in the NVa
+        # for each XAassoc_tuple in XAassoc_not_contributing_answer
+        for XAassoc_tuple in XAassoc_not_contributing_answer:
+            # if its Noun (i.e. self.xa_pairs[XAassoc_tuple[0]][0]) or its Verb (i.e. self.xa_pairs[XAassoc_tuple[0]][1]) is not present in the sentence
+            if xa_contributing_and_present_in_sentence.count(self.xa_pairs[XAassoc_tuple[0]][0])==0 \
+                or xa_contributing_and_present_in_sentence.count(self.xa_pairs[XAassoc_tuple[0]][1])==0:
+                # put it in a new list containing the XAa not present in sentence
+                XAassoc_not_present_in_sentence.append(XAassoc_tuple)
+                # if N and V are present in the XAa
             else:
                 # add it to the new list
-                NVassoc_not_contributing_answer_but_present.append(NVassoc_tuple)
+                XAassoc_not_contributing_answer_but_present.append(XAassoc_tuple)
 
-        if (len(NVassoc_contributing_anwser)+len(NVassoc_not_contributing_answer_but_present)+len(NVassoc_not_present_in_sentence)) != len(self.nv_pairs):
-            raise Exception, "The number of Noun-Verb association is not correct. Should be "+str(len(self.nv_pairs))
+        if (len(XAassoc_contributing_anwser)+len(XAassoc_not_contributing_answer_but_present)+len(XAassoc_not_present_in_sentence)) != len(self.xa_pairs):
+            raise Exception, "The number of Noun-Verb association is not correct. Should be "+str(len(self.xa_pairs))
 
-        return (NVassoc_contributing_anwser, NVassoc_not_contributing_answer_but_present, NVassoc_not_present_in_sentence)
-
-    def write_outputs(self,nva_tuples,fold):
-        out_csv='outputs/activations/corpus-'+self.corpus+'-activations.csv'
-        csv_header=['Sent No.','N-V Association','Agent', 'Object','Recepient']
-        with open(out_csv,'wb+') as csv_file:
-                w=csv.Dictwriter(csv_file,delimiter=';',fieldnames=csv_header)
-                w.writerow(csv_header)
-                w.writerow([])
-                for nva_tuple in nva_tuples:
-                    nv=self.nv_pairs[nva_tuple[0]]
-                    nv=nv[0]+'-'+nv[1]
-                    row1=[nv]+list(nva_tuple[1])
-                    row2=[nv]+list(nva_tuple[2])
-                    w.writerow(row1)
-                    w.writerow(row2)
-                    w.writerow(4*[''])
+        return (XAassoc_contributing_anwser, XAassoc_not_contributing_answer_but_present, XAassoc_not_present_in_sentence)
 
     def compute_error(self, input_signal, target_signal):
         """
@@ -181,47 +143,47 @@ class ThematicRoleError(object):
             target_signal: teacher output used for the supervised training corresponding to sentence
         Outputs:
             (mean of meaning errors, mean of sentence errors,
-                number of erroneous Noun/action, number of pertinent Noun/action, list of NVa that are correct, list of NVa that are incorrect)
+                number of erroneous Noun/action, number of pertinent Noun/action, list of XAa that are correct, list of XAa that are incorrect)
         The 2nd line gathers results not used in default mode. Use this information to know more on errors.
         """
 
         ## initialization
-        perf_asso_adm_answ = [] # performance of NVa admitting answer
-        (NVassoc_contributing_anwser, NVassoc_not_contributing_answer_but_present, NVassoc_not_present_in_sentence) = \
-            self._get_NVassoc_sliced(input_signal, target_signal, verbose=False)
+        perf_asso_adm_answ = [] # performance of XAa admitting answer
+        (XAassoc_contributing_anwser, XAassoc_not_contributing_answer_but_present, XAassoc_not_present_in_sentence) = \
+            self._get_XAassoc_sliced(input_signal, target_signal, verbose=False)
 
-        if len(NVassoc_contributing_anwser)==0 and len(NVassoc_not_contributing_answer_but_present)==0:
+        if len(XAassoc_contributing_anwser)==0 and len(XAassoc_not_contributing_answer_but_present)==0:
             return 0, 0
 
-        NVa_correct = []
-        NVa_erroneous = []
+        XAa_correct = []
+        XAa_erroneous = []
 
-        ## Computing errors and impossible states for NVa admiting answer
-        for NVassoc_tuple in NVassoc_contributing_anwser:
+        ## Computing errors and impossible states for XAa admiting answer
+        for XAassoc_tuple in XAassoc_contributing_anwser:
             ## Evaluate fraction of time when the good answer if given for the 3 signal AOR at the same time
-            err_answer = threshold_and_take_max_before_error(input_signal=NVassoc_tuple[1],
-                                                           target_signal=NVassoc_tuple[2],
+            err_answer = threshold_and_take_max_before_error(input_signal=XAassoc_tuple[1],
+                                                           target_signal=XAassoc_tuple[2],
                                                            error_measure=self.error_measure,
                                                            thresh=self.threshold)
             perf_asso_adm_answ.append(1 - err_answer)
             if err_answer > 0:
-                NVa_erroneous.append(NVassoc_tuple[0])
+                XAa_erroneous.append(XAassoc_tuple[0])
             else:
-                NVa_correct.append(NVassoc_tuple[0])
+                XAa_correct.append(XAassoc_tuple[0])
 
-        ## Computing errors and impossible states for NVa not admiting answer, but present in the sentence
-        perf_asso_not_adm_answ_p = [] #performance of NVa not admiting answer, but present
-        for NVassoc_tuple in NVassoc_not_contributing_answer_but_present:
-            err_answer = threshold_and_take_max_before_error(input_signal=NVassoc_tuple[1],
-                                                       target_signal=NVassoc_tuple[2],
+        ## Computing errors and impossible states for XAa not admiting answer, but present in the sentence
+        perf_asso_not_adm_answ_p = [] #performance of XAa not admiting answer, but present
+        for XAassoc_tuple in XAassoc_not_contributing_answer_but_present:
+            err_answer = threshold_and_take_max_before_error(input_signal=XAassoc_tuple[1],
+                                                       target_signal=XAassoc_tuple[2],
                                                        error_measure=self.error_measure,
                                                        thresh=self.threshold)
 
             perf_asso_not_adm_answ_p.append(1 - err_answer)
             if err_answer > 0:
-                NVa_erroneous.append(NVassoc_tuple[0])
+                XAa_erroneous.append(XAassoc_tuple[0])
             else:
-                NVa_correct.append(NVassoc_tuple[0])
+                XAa_correct.append(XAassoc_tuple[0])
 
         ## Compute means
         if perf_asso_adm_answ != []:
@@ -235,17 +197,17 @@ class ThematicRoleError(object):
             perf_asso_present=0
             raise Warning, "There is no answer for this sentence."
 
-        # compute the fraction of time when all the pertinent NVa are correct (for NVa present in the sentence)
+        # compute the fraction of time when all the pertinent XAa are correct (for XAa present in the sentence)
         all_output_signal = []
         all_target_signal = []
 
-        for NVassoc_tuple in NVassoc_contributing_anwser:
-            all_output_signal.append(keep_max_for_each_time_step_with_default(NVassoc_tuple[1]))
-            all_target_signal.append(NVassoc_tuple[2])
+        for XAassoc_tuple in XAassoc_contributing_anwser:
+            all_output_signal.append(keep_max_for_each_time_step_with_default(XAassoc_tuple[1]))
+            all_target_signal.append(XAassoc_tuple[2])
 
-        for NVassoc_tuple in NVassoc_not_contributing_answer_but_present:
-            all_output_signal.append(keep_max_for_each_time_step_with_default(NVassoc_tuple[1]))
-            all_target_signal.append(NVassoc_tuple[2])
+        for XAassoc_tuple in XAassoc_not_contributing_answer_but_present:
+            all_output_signal.append(keep_max_for_each_time_step_with_default(XAassoc_tuple[1]))
+            all_target_signal.append(XAassoc_tuple[2])
 
         global_out_arr = mdp.numx.concatenate(all_output_signal, axis=1)
         global_target_arr = mdp.numx.concatenate(all_target_signal, axis=1)
@@ -256,22 +218,21 @@ class ThematicRoleError(object):
 
         ## Supplementary computations (not used in default program)
         ## Compute the number of pertinent SW (semantic word) outputs for each verb that is erroneous
-        # i.e. number of erroneous NV-assoc
-        total_nr_of_pertinent_SW = len(NVassoc_contributing_anwser) + len(NVassoc_not_contributing_answer_but_present)
+        # i.e. number of erroneous XA-assoc
+        total_nr_of_pertinent_SW = len(XAassoc_contributing_anwser) + len(XAassoc_not_contributing_answer_but_present)
         nr_of_erroneous_SW = int(round(total_nr_of_pertinent_SW * (1-perf_asso_present)))
 
-        if total_nr_of_pertinent_SW != (len(NVa_erroneous)+len(NVa_correct)):
+        if total_nr_of_pertinent_SW != (len(XAa_erroneous)+len(XAa_correct)):
             raise Exception, "Incoherent total_nr_of_pertinent_SW. total_nr_of_pertinent_SW"+str(total_nr_of_pertinent_SW)+ \
-                "\n NVa_correct="+str(NVa_correct)+ \
-                "\n NVa_erroneous="+str(NVa_erroneous)
-        if nr_of_erroneous_SW != len(NVa_erroneous):
+                "\n XAa_correct="+str(XAa_correct)+ \
+                "\n XAa_erroneous="+str(XAa_erroneous)
+        if nr_of_erroneous_SW != len(XAa_erroneous):
             raise Exception, "Incoherent nr_of_erroneous_SW." \
                 +"\nnr_of_erroneous_SW="+str(nr_of_erroneous_SW)+ \
-                "\n NVa_correct="+str(NVa_correct)+ \
-                "\n len(NVa_erroneous)="+str(len(NVa_erroneous))
+                "\n XAa_correct="+str(XAa_correct)+ \
+                "\n len(XAa_erroneous)="+str(len(XAa_erroneous))
 
         '''return (1 - perf_asso_present, global_err_answer,
-                nr_of_erroneous_SW, total_nr_of_pertinent_SW, NVa_correct, NVa_erroneous)'''
+                nr_of_erroneous_SW, total_nr_of_pertinent_SW, XAa_correct, XAa_erroneous)'''
 
         return 1 - perf_asso_present, global_err_answer
-

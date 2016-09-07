@@ -1,6 +1,5 @@
 """
 Created on Sun Mar 27 13:40:22 2016
-
 @author: fox
 """
 #! /usr/bin/env python
@@ -60,15 +59,11 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
 
                  self.n_folds=n_folds
 
-                 if not corpus=="90k":
-                     # For corpus 462, comment the lower one, also make change in tra_error line 54
-                     self.unique_labels=['N1-A1','N1-O1','N1-R1','N1-A2','N1-O2','N1-R2','N2-A1','N2-O1','N2-R1','N2-A2','N2-O2','N2-R2',
-                                         'N3-A1','N3-O1','N3-R1','N3-A2','N3-O2','N3-R2','N4-A1','N4-O1','N4-R1','N4-A2','N4-O2','N4-R2']
-                 else:
-                     # For corpus 90k, comoment the upper one, also make change in tra_error line 54
-                     self.unique_labels=['N1-A1','N1-O1','N1-R1','N1-A2','N1-O2','N1-R2','N2-A1','N2-O1','N2-R1','N2-A2','N2-O2','N2-R2',
-                                         'N3-A1','N3-O1','N3-R1','N3-A2','N3-O2','N3-R2','N4-A1','N4-O1','N4-R1','N4-A2','N4-O2','N4-R2',
-                                         'N5-A1','N5-O1','N5-R1','N5-A2','N5-O2','N5-R2']
+                 sw=7
+                 actions=2
+                 roles=['V','A','O','R']
+
+                 self.unique_labels=['X'+str(s+1)+'-'+r+str(a+1) for s in range(sw) for a in range(actions) for r in roles ]
 
                  #load raw sentneces and labels from the files and compute several other meta info.
                  self.sentences,self.labels=self.__load_corpus(corpus_size=corpus,subset=subset)
@@ -110,7 +105,6 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
         """
             tokenized_sentence:a list containing tokenized sentence where each element of list is a word
             i.e. ['dog','ate','the','bone']
-
             returns
                 a matrix of dimension (sentence length * word2vec dimension)
         """
@@ -159,7 +153,6 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
     def __generate_training_data(self):
         '''
             Generate the sequences for each sentences and labels to be used as input and output in ESN
-
         '''
 
         # Check if the w2v converted data format of raw sentence is available in the pkl file if yes then read from pickle file
@@ -213,7 +206,6 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
         '''
             f_copy: A copy of trained flow
             test_sentences= a list of senteces for testing
-
             return:
                 list of arrays where each array is activation of the test sentence
         '''
@@ -343,7 +335,6 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
             returns:
                 y_true_lbl: a list of list containing true roles for each senteces
                 y_pred_lbl: a list of list containing true roles for each senteces
-
         """
 
         labels=np.array(self.unique_labels)
@@ -351,7 +342,7 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
         for idx in range(len(y_true)):
             sent_true_role, sent_pred_role=[],[]
             (NVassoc_contributing_anwser, NVassoc_not_contributing_answer_but_present, NVassoc_not_present_in_sentence) = \
-                self._get_NVassoc_sliced(input_signal=y_pred[idx],target_signal= y_true[idx], verbose=False)
+                self._get_XAassoc_sliced(input_signal=y_pred[idx],target_signal= y_true[idx], verbose=False)
 
             for nva_tuple in NVassoc_contributing_anwser + NVassoc_not_contributing_answer_but_present:
                 nva_index = nva_tuple[0]
@@ -398,7 +389,7 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
             word_vector=self.w2v_model[word]
         return word_vector
 
-    def grid_search(self,output_csv_name=None,progress=True,verbose=False):
+    def grid_search(self,search_parameters,output_csv_name=None,progress=True,verbose=False):
         '''
             this execute method does a grid search over reservoir parameters and log the errors in a csv file w.r.t to
             gridsearch parameters
@@ -416,10 +407,7 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
 
         #dictionary of parameter to do grid search on
         #Note the parameter key should match the name with variable of this class
-        gridsearch_parameters = {
-                                'seed':range(self._instance),
-                                'reservoir_size':[90,291,493,695,896,1098,1776,2882,3988,5094]
-                                }
+        gridsearch_parameters = search_parameters
         parameter_ranges = []
         parameters_lst = []
 
@@ -479,24 +467,23 @@ if __name__=="__main__":
     learning_mode='SFL' # 'SCL'
 
     #*************************** Corpus 90k ***********************************
-    corpus='90k'
+    '''corpus='90k'
     sub_corpus_per=25 # percentage of sub-corpus to be selected out of 90582
     n_folds=2 # train and test set are of equal size, both the set are tested and trained once atleast
     sub_corpus_size=(sub_corpus_per*90582)/100 #genrate a sub-corpus randomly
     subset=random.sample(range(0,90582),sub_corpus_size)
     iss= 2.3  # 2.3 for SFL
     sr=  2.2  # 2.2 for SFL
-    lr=  0.13 # 0.13 for SFL
-
+    lr=  0.13 # 0.13 for SFL'''
 
     #************************** Corpus 462 ************************************
     corpus='462'
     sub_corpus_per=100
     subset=range(0,462)
     n_folds=10
-    iss= 2.5 #2.5 for SCL # 2.3 for SFL
-    sr= 2.4 #2.4  for SCL # 2.2 for SFL
-    lr= 0.07 #0.07 for SCL # 0.13 for SFL
+    iss= 2.3 #2.5 for SCL # 2.3 for SFL
+    sr= 2.2 #2.4  for SCL # 2.2 for SFL
+    lr= 0.13 #0.07 for SCL # 0.13 for SFL
 
     #************************** Corpus 462+45 *********************************
     '''corpus='462_45'
@@ -519,12 +506,17 @@ if __name__=="__main__":
     #******************* Initialize a Model ***********************************
 
     model = ThematicRoleModel(corpus=corpus,input_dim=50,reservoir_size=1000,input_scaling=iss,spectral_radius=sr,
-                            leak_rate=lr,ridge=1e-6,subset=subset,n_folds=n_folds,verbose=True,seed=2,_instance=5,
+                            leak_rate=lr,ridge=1e-6,subset=subset,n_folds=n_folds,verbose=True,seed=3,_instance=1,
                             plot_activations=False,save_predictions=False,learning_mode=learning_mode)
     model.initialize_esn()
-
-    #******************* Execute a Model with multiple Reservoir instances ***********************************
     model.execute(verbose=True)
-    #model.grid_search()
+
+    # To run the multiple instance of the model set 'seed' parameter to range of instances, in grid_search_param dict and call the grid search method.
+    '''grid_search_params={
+            'seed':range(5),
+            'reservoir_size':[90,291,493,695,896,1098,1776,2882,3988,5094]
+        }
+    model.grid_search(search_parameters=grid_search_params)'''
+
     end_time = time.time()
     print '\nTotal execution time : %s min '%((end_time-start_time)/60)
