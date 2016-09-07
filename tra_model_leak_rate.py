@@ -512,9 +512,9 @@ if __name__=="__main__":
 
     # To run the multiple instance of the model set 'seed' parameter to range of instances, in grid_search_param dict and call the grid search method.
     grid_search_params={
-            'spectral_radius':mdp.numx.arange(0.5,4.5,0.5),
-	    'input_scaling':mdp.numx.arange(0.5,4.5,0.5),
-	    'leak_rate':mdp.numx.arange(0.1,0.5,0.1)
+            'spectral_radius':mdp.numx.arange(3.0,4.1,0.1),
+	    'input_scaling':mdp.numx.arange(2.5,3.5,0.1),
+	    'leak_rate':mdp.numx.arange(0.05,0.16,0.01)
         }
     model.grid_search(search_parameters=grid_search_params)
 
