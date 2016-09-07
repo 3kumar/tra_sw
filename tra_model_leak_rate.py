@@ -185,7 +185,6 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
         self.read_out = RidgeRegressionNode(ridge_param=self.ridge, use_pinv=True, with_bias=True)
         #read_out = RidgeRegressionNode(ridge_param=self.ridge,other_error_measure= rmse,cross_validate_function=n_fold_random,n_folds=10,verbose=self.verbose)
         self.flow = mdp.Flow([self.reservoir, self.read_out],verbose=self.verbose)
-        make_inspectable(LeakyReservoirNode)
 
     def trainModel(self,training_sentences,training_labels):
         '''
@@ -396,7 +395,7 @@ class ThematicRoleModel(ThematicRoleError,PlotRoles):
         '''
         if output_csv_name is None:
             ct=time.strftime("%d-%m_%H:%M")
-            out_csv='outputs/reservoir_size_shuffle-tra-'+str(self.corpus)+'-'+\
+            out_csv='outputs/param-search-tra-'+str(self.corpus)+'-'+\
                      str(self.reservoir_size)+'res-'+\
                      str(self.n_folds)+'folds-'+\
                      str(self.ridge)+'ridge-'+\
@@ -464,7 +463,7 @@ if __name__=="__main__":
             SCL : sentence continous learning
     '''
     start_time = time.time()
-    learning_mode='SFL' # 'SCL'
+    learning_mode='SCL' # 'SCL'
 
     #*************************** Corpus 90k ***********************************
     '''corpus='90k'
@@ -506,17 +505,18 @@ if __name__=="__main__":
     #******************* Initialize a Model ***********************************
 
     model = ThematicRoleModel(corpus=corpus,input_dim=50,reservoir_size=1000,input_scaling=iss,spectral_radius=sr,
-                            leak_rate=lr,ridge=1e-6,subset=subset,n_folds=n_folds,verbose=True,seed=3,_instance=1,
+                            leak_rate=lr,ridge=1e-6,subset=subset,n_folds=n_folds,verbose=True,seed=2,_instance=1,
                             plot_activations=False,save_predictions=False,learning_mode=learning_mode)
     model.initialize_esn()
-    model.execute(verbose=True)
+    #model.execute(verbose=True)
 
     # To run the multiple instance of the model set 'seed' parameter to range of instances, in grid_search_param dict and call the grid search method.
-    '''grid_search_params={
-            'seed':range(5),
-            'reservoir_size':[90,291,493,695,896,1098,1776,2882,3988,5094]
+    grid_search_params={
+            'spectral_radius':mdp.numx.arange(0.5,4.5,0.5),
+	    'input_scaling':mdp.numx.arange(0.5,4.5,0.5),
+	    'leak_rate':mdp.numx.arange(0.1,0.5,0.1)
         }
-    model.grid_search(search_parameters=grid_search_params)'''
+    model.grid_search(search_parameters=grid_search_params)
 
     end_time = time.time()
     print '\nTotal execution time : %s min '%((end_time-start_time)/60)
