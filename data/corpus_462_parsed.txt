@@ -1,0 +1,462 @@
+the giraffe walks . # N1-A1
+walking was the giraffe . # N1-A1
+the beaver cuts the fish . # N1-A1 N2-O1
+cut was the fish by the beaver . # N1-O1 N2-A1
+the fish , the beaver cut it . # N1-O1 N2-A1
+by the beaver the fish was cut . # N1-A1 N2-O1
+the dog gives the cat to the mouse . # N1-A1 N2-O1 N3-R1
+the dog gives to the mouse the cat . # N1-A1 N2-R1 N3-O1
+the dog to the mouse gives the cat . # N1-A1 N2-R1 N3-O1
+the giraffe that thinks walks . # N1-A1 N1-A2
+cut by the beaver was the fish . # N1-A1 N2-O1
+the fish was cut by the beaver . # N1-O1 N2-A1
+give the cat to the mouse , the dog did . # N1-O1 N2-R1 N3-A1
+to the mouse the dog gives the cat . # N1-R1 N2-A1 N3-O1
+given by the dog was the cat to the mouse . # N1-A1 N2-O1 N3-R1
+given by the dog to the mouse was the cat . # N1-A1 N2-R1 N3-O1
+given was the cat by the dog to the mouse . # N1-O1 N2-A1 N3-R1
+given to the mouse by the dog was the cat . # N1-R1 N2-A1 N3-O1
+given to the mouse was the cat by the dog . # N1-R1 N2-O1 N3-A1
+the cat was given by the dog to the mouse . # N1-O1 N2-A1 N3-R1
+the cat was given to the mouse by the dog . # N1-O1 N2-R1 N3-A1
+the cat by the dog was given to the mouse . # N1-O1 N2-A1 N3-R1
+the cat by the dog to the mouse was given . # N1-O1 N2-A1 N3-R1
+the cat to the mouse was given by the dog . # N1-O1 N2-R1 N3-A1
+the cat to the mouse by the dog was given . # N1-O1 N2-R1 N3-A1
+walking was the giraffe that thinks . # N1-A1 N1-A2
+by the dog the cat was given to the mouse . # N1-A1 N2-O1 N3-R1
+by the dog the cat to the mouse was given . # N1-A1 N2-O1 N3-R1
+by the dog to the mouse the cat was given . # N1-A1 N2-R1 N3-O1
+to the mouse was given by the dog the cat . # N1-R1 N2-A1 N3-O1
+to the mouse was given the cat by the dog . # N1-R1 N2-O1 N3-A1
+to the mouse by the dog the cat was given . # N1-R1 N2-A1 N3-O1
+to the mouse the cat was given by the dog . # N1-R1 N2-O1 N3-A1
+to the mouse the cat by the dog was given . # N1-R1 N2-O1 N3-A1
+the beaver that thinks cuts the fish . # N1-A1 N1-A2 N2-O2
+the beaver cuts the fish that thinks . # N1-A1 N2-O1 N2-A2
+the giraffe that kisses the girl walks . # N1-A1 N2-O1 N1-A2
+the giraffe that the guy kisses walks . # N1-O1 N2-A1 N1-A2
+cut was the fish that thinks by the beaver . # N1-O1 N2-A1 N1-A2
+cut was the fish by the beaver that thinks . # N1-O1 N2-A1 N2-A2
+the fish that thinks , the beaver cut it . # N1-A1 N1-O2 N2-A2
+the fish , the beaver that thinks cut it . # N2-A1 N1-O2 N2-A2
+the giraffe that was kissed by the guy walks . # N1-O1 N2-A1 N1-A2
+walking was the giraffe that kisses the girl . # N1-A1 N1-A2 N2-O2
+walking was the giraffe that the guy kisses . # N1-A1 N1-O2 N2-A2
+by the beaver that thinks the fish was cut . # N1-A1 N1-A2 N2-O2
+by the beaver the fish that thinks was cut . # N2-A1 N1-A2 N2-O2
+the dog that thinks gives the cat to the mouse . # N1-A1 N1-A2 N2-O2 N3-R2
+the dog gives the cat that thinks to the mouse . # N1-A1 N2-O1 N3-R1 N2-A2
+the dog gives the cat to the mouse that thinks . # N1-A1 N2-O1 N3-R1 N3-A2
+the dog that thinks gives to the mouse the cat . # N1-A1 N1-A2 N2-R2 N3-O2
+the dog gives to the mouse that thinks the cat . # N1-A1 N2-R1 N3-O1 N2-A2
+the dog gives to the mouse the cat that thinks . # N1-A1 N2-R1 N3-O1 N3-A2
+the dog that thinks to the mouse gives the cat . # N1-A1 N1-A2 N2-R2 N3-O2
+the dog to the mouse that thinks gives the cat . # N2-A1 N1-A2 N2-R2 N3-O2
+the dog to the mouse gives the cat that thinks . # N1-A1 N2-R1 N3-O1 N3-A2
+the giraffe that the girl was kissed by walks . # N1-A1 N2-O1 N1-A2
+the beaver that kisses the girl cuts the fish . # N1-A1 N2-O1 N1-A2 N3-O2
+the beaver that the guy kisses cuts the fish . # N1-O1 N2-A1 N1-A2 N3-O2
+the beaver cuts the fish that kisses the girl . # N1-A1 N2-O1 N2-A2 N3-O2
+the beaver cuts the fish that the guy kisses . # N1-A1 N2-O1 N2-O2 N3-A2
+cut by the beaver that thinks was the fish . # N1-A1 N2-O1 N1-A2
+cut by the beaver was the fish that thinks . # N1-A1 N2-O1 N2-A2
+the fish that thinks was cut by the beaver . # N1-A1 N1-O2 N2-A2
+the fish was cut by the beaver that thinks . # N1-O1 N2-A1 N2-A2
+give the cat that thinks to the mouse , the dog did . # N1-O1 N2-R1 N3-A1 N1-A2
+give the cat to the mouse that thinks , the dog did . # N1-O1 N2-R1 N3-A1 N2-A2
+give the cat to the mouse , the dog that thinks did . # N1-O1 N2-R1 N3-A1 N3-A2
+to the mouse that thinks the dog gives the cat . # N1-A1 N1-R2 N2-A2 N3-O2
+to the mouse the dog that thinks gives the cat . # N2-A1 N1-R2 N2-A2 N3-O2
+to the mouse the dog gives the cat that thinks . # N1-R1 N2-A1 N3-O1 N3-A2
+walking was the giraffe that was kissed by the guy . # N1-A1 N1-O2 N2-A2
+given by the dog that thinks was the cat to the mouse . # N1-A1 N2-O1 N3-R1 N1-A2
+given by the dog was the cat that thinks to the mouse . # N1-A1 N2-O1 N3-R1 N2-A2
+given by the dog was the cat to the mouse that thinks . # N1-A1 N2-O1 N3-R1 N3-A2
+given by the dog that thinks to the mouse was the cat . # N1-A1 N2-R1 N3-O1 N1-A2
+given by the dog to the mouse that thinks was the cat . # N1-A1 N2-R1 N3-O1 N2-A2
+given by the dog to the mouse was the cat that thinks . # N1-A1 N2-R1 N3-O1 N3-A2
+given was the cat that thinks by the dog to the mouse . # N1-O1 N2-A1 N3-R1 N1-A2
+given was the cat by the dog that thinks to the mouse . # N1-O1 N2-A1 N3-R1 N2-A2
+given was the cat by the dog to the mouse that thinks . # N1-O1 N2-A1 N3-R1 N3-A2
+given to the mouse that thinks by the dog was the cat . # N1-R1 N2-A1 N3-O1 N1-A2
+given to the mouse by the dog that thinks was the cat . # N1-R1 N2-A1 N3-O1 N2-A2
+given to the mouse by the dog was the cat that thinks . # N1-R1 N2-A1 N3-O1 N3-A2
+given to the mouse that thinks was the cat by the dog . # N1-R1 N2-O1 N3-A1 N1-A2
+given to the mouse was the cat that thinks by the dog . # N1-R1 N2-O1 N3-A1 N2-A2
+given to the mouse was the cat by the dog that thinks . # N1-R1 N2-O1 N3-A1 N3-A2
+the cat that thinks was given by the dog to the mouse . # N1-A1 N1-O2 N2-A2 N3-R2
+the cat was given by the dog that thinks to the mouse . # N1-O1 N2-A1 N3-R1 N2-A2
+the cat was given by the dog to the mouse that thinks . # N1-O1 N2-A1 N3-R1 N3-A2
+the cat that thinks was given to the mouse by the dog . # N1-A1 N1-O2 N2-R2 N3-A2
+the cat was given to the mouse that thinks by the dog . # N1-O1 N2-R1 N3-A1 N2-A2
+the cat was given to the mouse by the dog that thinks . # N1-O1 N2-R1 N3-A1 N3-A2
+the cat that thinks by the dog was given to the mouse . # N1-A1 N1-O2 N2-A2 N3-R2
+the cat by the dog that thinks was given to the mouse . # N2-A1 N1-O2 N2-A2 N3-R2
+the cat by the dog was given to the mouse that thinks . # N1-O1 N2-A1 N3-R1 N3-A2
+the cat that thinks by the dog to the mouse was given . # N1-A1 N1-O2 N2-A2 N3-R2
+the cat by the dog that thinks to the mouse was given . # N2-A1 N1-O2 N2-A2 N3-R2
+the cat by the dog to the mouse that thinks was given . # N3-A1 N1-O2 N2-A2 N3-R2
+the cat that thinks to the mouse was given by the dog . # N1-A1 N1-O2 N2-R2 N3-A2
+the cat to the mouse that thinks was given by the dog . # N2-A1 N1-O2 N2-R2 N3-A2
+the cat to the mouse was given by the dog that thinks . # N1-O1 N2-R1 N3-A1 N3-A2
+the cat that thinks to the mouse by the dog was given . # N1-A1 N1-O2 N2-R2 N3-A2
+the cat to the mouse that thinks by the dog was given . # N2-A1 N1-O2 N2-R2 N3-A2
+the cat to the mouse by the dog that thinks was given . # N3-A1 N1-O2 N2-R2 N3-A2
+walking was the giraffe that the girl was kissed by . # N1-A1 N1-A2 N2-O2
+the beaver that was kissed by the guy cuts the fish . # N1-O1 N2-A1 N1-A2 N3-O2
+the beaver cuts the fish that was kissed by the guy . # N1-A1 N2-O1 N2-O2 N3-A2
+cut was the fish that kisses the girl by the beaver . # N1-O1 N3-A1 N1-A2 N2-O2
+cut was the fish that the guy kisses by the beaver . # N1-O1 N3-A1 N1-O2 N2-A2
+cut was the fish by the beaver that kisses the girl . # N1-O1 N2-A1 N2-A2 N3-O2
+cut was the fish by the beaver that the guy kisses . # N1-O1 N2-A1 N2-O2 N3-A2
+the fish that kisses the girl , the beaver cut it . # N1-A1 N2-O1 N1-O2 N3-A2
+the fish that the guy kisses , the beaver cut it . # N1-O1 N2-A1 N1-O2 N3-A2
+the fish , the beaver that kisses the girl cut it . # N2-A1 N3-O1 N1-O2 N2-A2
+the fish , the beaver that the guy kisses cut it . # N2-O1 N3-A1 N1-O2 N2-A2
+by the dog that thinks the cat was given to the mouse . # N1-A1 N1-A2 N2-O2 N3-R2
+by the dog the cat that thinks was given to the mouse . # N2-A1 N1-A2 N2-O2 N3-R2
+by the dog the cat was given to the mouse that thinks . # N1-A1 N2-O1 N3-R1 N3-A2
+by the dog that thinks the cat to the mouse was given . # N1-A1 N1-A2 N2-O2 N3-R2
+by the dog the cat that thinks to the mouse was given . # N2-A1 N1-A2 N2-O2 N3-R2
+by the dog the cat to the mouse that thinks was given . # N3-A1 N1-A2 N2-O2 N3-R2
+by the dog that thinks to the mouse the cat was given . # N1-A1 N1-A2 N2-R2 N3-O2
+by the dog to the mouse that thinks the cat was given . # N2-A1 N1-A2 N2-R2 N3-O2
+by the dog to the mouse the cat that thinks was given . # N3-A1 N1-A2 N2-R2 N3-O2
+to the mouse that thinks was given by the dog the cat . # N1-A1 N1-R2 N2-A2 N3-O2
+to the mouse was given by the dog that thinks the cat . # N1-R1 N2-A1 N3-O1 N2-A2
+to the mouse was given by the dog the cat that thinks . # N1-R1 N2-A1 N3-O1 N3-A2
+to the mouse that thinks was given the cat by the dog . # N1-A1 N1-R2 N2-O2 N3-A2
+to the mouse was given the cat that thinks by the dog . # N1-R1 N2-O1 N3-A1 N2-A2
+to the mouse was given the cat by the dog that thinks . # N1-R1 N2-O1 N3-A1 N3-A2
+to the mouse that thinks by the dog the cat was given . # N1-A1 N1-R2 N2-A2 N3-O2
+to the mouse by the dog that thinks the cat was given . # N2-A1 N1-R2 N2-A2 N3-O2
+to the mouse by the dog the cat that thinks was given . # N3-A1 N1-R2 N2-A2 N3-O2
+to the mouse that thinks the cat was given by the dog . # N1-A1 N1-R2 N2-O2 N3-A2
+to the mouse the cat that thinks was given by the dog . # N2-A1 N1-R2 N2-O2 N3-A2
+to the mouse the cat was given by the dog that thinks . # N1-R1 N2-O1 N3-A1 N3-A2
+to the mouse that thinks the cat by the dog was given . # N1-A1 N1-R2 N2-O2 N3-A2
+to the mouse the cat that thinks by the dog was given . # N2-A1 N1-R2 N2-O2 N3-A2
+to the mouse the cat by the dog that thinks was given . # N3-A1 N1-R2 N2-O2 N3-A2
+the beaver that the girl was kissed by cuts the fish . # N1-A1 N2-O1 N1-A2 N3-O2
+the beaver cuts the fish that the girl was kissed by . # N1-A1 N2-O1 N2-A2 N3-O2
+by the beaver that kisses the girl the fish was cut . # N1-A1 N2-O1 N1-A2 N3-O2
+by the beaver that the guy kisses the fish was cut . # N1-O1 N2-A1 N1-A2 N3-O2
+by the beaver the fish that kisses the girl was cut . # N2-A1 N3-O1 N1-A2 N2-O2
+by the beaver the fish that the guy kisses was cut . # N2-O1 N3-A1 N1-A2 N2-O2
+the dog that kisses the girl gives the cat to the mouse . # N1-A1 N2-O1 N1-A2 N3-O2 N4-R2
+the dog that the guy kisses gives the cat to the mouse . # N1-O1 N2-A1 N1-A2 N3-O2 N4-R2
+the dog gives the cat that kisses the girl to the mouse . # N1-A1 N2-O1 N4-R1 N2-A2 N3-O2
+the dog gives the cat that the guy kisses to the mouse . # N1-A1 N2-O1 N4-R1 N2-O2 N3-A2
+the dog gives the cat to the mouse that kisses the girl . # N1-A1 N2-O1 N3-R1 N3-A2 N4-O2
+the dog gives the cat to the mouse that the guy kisses . # N1-A1 N2-O1 N3-R1 N3-O2 N4-A2
+the dog that kisses the girl gives to the mouse the cat . # N1-A1 N2-O1 N1-A2 N3-R2 N4-O2
+the dog that the guy kisses gives to the mouse the cat . # N1-O1 N2-A1 N1-A2 N3-R2 N4-O2
+the dog gives to the mouse that kisses the girl the cat . # N1-A1 N2-R1 N4-O1 N2-A2 N3-O2
+the dog gives to the mouse that the guy kisses the cat . # N1-A1 N2-R1 N4-O1 N2-O2 N3-A2
+the dog gives to the mouse the cat that kisses the girl . # N1-A1 N2-R1 N3-O1 N3-A2 N4-O2
+the dog gives to the mouse the cat that the guy kisses . # N1-A1 N2-R1 N3-O1 N3-O2 N4-A2
+the dog that kisses the girl to the mouse gives the cat . # N1-A1 N2-O1 N1-A2 N3-R2 N4-O2
+the dog that the guy kisses to the mouse gives the cat . # N1-O1 N2-A1 N1-A2 N3-R2 N4-O2
+the dog to the mouse that kisses the girl gives the cat . # N2-A1 N3-O1 N1-A2 N2-R2 N4-O2
+the dog to the mouse that the guy kisses gives the cat . # N2-O1 N3-A1 N1-A2 N2-R2 N4-O2
+the dog to the mouse gives the cat that kisses the girl . # N1-A1 N2-R1 N3-O1 N3-A2 N4-O2
+the dog to the mouse gives the cat that the guy kisses . # N1-A1 N2-R1 N3-O1 N3-O2 N4-A2
+cut by the beaver that kisses the girl was the fish . # N1-A1 N3-O1 N1-A2 N2-O2
+cut by the beaver that the guy kisses was the fish . # N1-A1 N3-O1 N1-O2 N2-A2
+cut by the beaver was the fish that kisses the girl . # N1-A1 N2-O1 N2-A2 N3-O2
+cut by the beaver was the fish that the guy kisses . # N1-A1 N2-O1 N2-O2 N3-A2
+cut was the fish that was kissed by the guy by the beaver . # N1-O1 N3-A1 N1-O2 N2-A2
+cut was the fish by the beaver that was kissed by the guy . # N1-O1 N2-A1 N2-O2 N3-A2
+the fish that was kissed by the guy , the beaver cut it . # N1-O1 N2-A1 N1-O2 N3-A2
+the fish , the beaver that was kissed by the guy cut it . # N2-O1 N3-A1 N1-O2 N2-A2
+the fish that kisses the girl was cut by the beaver . # N1-A1 N2-O1 N1-O2 N3-A2
+the fish that the guy kisses was cut by the beaver . # N1-O1 N2-A1 N1-O2 N3-A2
+the fish was cut by the beaver that kisses the girl . # N1-O1 N2-A1 N2-A2 N3-O2
+the fish was cut by the beaver that the guy kisses . # N1-O1 N2-A1 N2-O2 N3-A2
+give the cat that kisses the girl to the mouse , the dog did . # N1-O1 N3-R1 N4-A1 N1-A2 N2-O2
+give the cat that the guy kisses to the mouse , the dog did . # N1-O1 N3-R1 N4-A1 N1-O2 N2-A2
+give the cat to the mouse that kisses the girl , the dog did . # N1-O1 N2-R1 N4-A1 N2-A2 N3-O2
+give the cat to the mouse that the guy kisses , the dog did . # N1-O1 N2-R1 N4-A1 N2-O2 N3-A2
+give the cat to the mouse , the dog that kisses the girl did . # N1-O1 N2-R1 N3-A1 N3-A2 N4-O2
+give the cat to the mouse , the dog that the guy kisses did . # N1-O1 N2-R1 N3-A1 N3-O2 N4-A2
+to the mouse that kisses the girl the dog gives the cat . # N1-A1 N2-O1 N1-R2 N3-A2 N4-O2
+to the mouse that the guy kisses the dog gives the cat . # N1-O1 N2-A1 N1-R2 N3-A2 N4-O2
+to the mouse the dog that kisses the girl gives the cat . # N2-A1 N3-O1 N1-R2 N2-A2 N4-O2
+to the mouse the dog that the guy kisses gives the cat . # N2-O1 N3-A1 N1-R2 N2-A2 N4-O2
+to the mouse the dog gives the cat that kisses the girl . # N1-R1 N2-A1 N3-O1 N3-A2 N4-O2
+to the mouse the dog gives the cat that the guy kisses . # N1-R1 N2-A1 N3-O1 N3-O2 N4-A2
+by the beaver that was kissed by the guy the fish was cut . # N1-O1 N2-A1 N1-A2 N3-O2
+by the beaver the fish that was kissed by the guy was cut . # N2-O1 N3-A1 N1-A2 N2-O2
+cut was the fish that the girl was kissed by by the beaver . # N1-O1 N3-A1 N1-A2 N2-O2
+cut was the fish by the beaver that the girl was kissed by . # N1-O1 N2-A1 N2-A2 N3-O2
+the fish that the girl was kissed by , the beaver cut it . # N1-A1 N2-O1 N1-O2 N3-A2
+the fish , the beaver that the girl was kissed by cut it . # N2-A1 N3-O1 N1-O2 N2-A2
+given by the dog that kisses the girl was the cat to the mouse . # N1-A1 N3-O1 N4-R1 N1-A2 N2-O2
+given by the dog that the guy kisses was the cat to the mouse . # N1-A1 N3-O1 N4-R1 N1-O2 N2-A2
+given by the dog was the cat that kisses the girl to the mouse . # N1-A1 N2-O1 N4-R1 N2-A2 N3-O2
+given by the dog was the cat that the guy kisses to the mouse . # N1-A1 N2-O1 N4-R1 N2-O2 N3-A2
+given by the dog was the cat to the mouse that kisses the girl . # N1-A1 N2-O1 N3-R1 N3-A2 N4-O2
+given by the dog was the cat to the mouse that the guy kisses . # N1-A1 N2-O1 N3-R1 N3-O2 N4-A2
+given by the dog that kisses the girl to the mouse was the cat . # N1-A1 N3-R1 N4-O1 N1-A2 N2-O2
+given by the dog that the guy kisses to the mouse was the cat . # N1-A1 N3-R1 N4-O1 N1-O2 N2-A2
+given by the dog to the mouse that kisses the girl was the cat . # N1-A1 N2-R1 N4-O1 N2-A2 N3-O2
+given by the dog to the mouse that the guy kisses was the cat . # N1-A1 N2-R1 N4-O1 N2-O2 N3-A2
+given by the dog to the mouse was the cat that kisses the girl . # N1-A1 N2-R1 N3-O1 N3-A2 N4-O2
+given by the dog to the mouse was the cat that the guy kisses . # N1-A1 N2-R1 N3-O1 N3-O2 N4-A2
+given was the cat that kisses the girl by the dog to the mouse . # N1-O1 N3-A1 N4-R1 N1-A2 N2-O2
+given was the cat that the guy kisses by the dog to the mouse . # N1-O1 N3-A1 N4-R1 N1-O2 N2-A2
+given was the cat by the dog that kisses the girl to the mouse . # N1-O1 N2-A1 N4-R1 N2-A2 N3-O2
+given was the cat by the dog that the guy kisses to the mouse . # N1-O1 N2-A1 N4-R1 N2-O2 N3-A2
+given was the cat by the dog to the mouse that kisses the girl . # N1-O1 N2-A1 N3-R1 N3-A2 N4-O2
+given was the cat by the dog to the mouse that the guy kisses . # N1-O1 N2-A1 N3-R1 N3-O2 N4-A2
+given to the mouse that kisses the girl by the dog was the cat . # N1-R1 N3-A1 N4-O1 N1-A2 N2-O2
+given to the mouse that the guy kisses by the dog was the cat . # N1-R1 N3-A1 N4-O1 N1-O2 N2-A2
+given to the mouse by the dog that kisses the girl was the cat . # N1-R1 N2-A1 N4-O1 N2-A2 N3-O2
+given to the mouse by the dog that the guy kisses was the cat . # N1-R1 N2-A1 N4-O1 N2-O2 N3-A2
+given to the mouse by the dog was the cat that kisses the girl . # N1-R1 N2-A1 N3-O1 N3-A2 N4-O2
+given to the mouse by the dog was the cat that the guy kisses . # N1-R1 N2-A1 N3-O1 N3-O2 N4-A2
+given to the mouse that kisses the girl was the cat by the dog . # N1-R1 N3-O1 N4-A1 N1-A2 N2-O2
+given to the mouse that the guy kisses was the cat by the dog . # N1-R1 N3-O1 N4-A1 N1-O2 N2-A2
+given to the mouse was the cat that kisses the girl by the dog . # N1-R1 N2-O1 N4-A1 N2-A2 N3-O2
+given to the mouse was the cat that the guy kisses by the dog . # N1-R1 N2-O1 N4-A1 N2-O2 N3-A2
+given to the mouse was the cat by the dog that kisses the girl . # N1-R1 N2-O1 N3-A1 N3-A2 N4-O2
+given to the mouse was the cat by the dog that the guy kisses . # N1-R1 N2-O1 N3-A1 N3-O2 N4-A2
+the dog that was kissed by the guy gives the cat to the mouse . # N1-O1 N2-A1 N1-A2 N3-O2 N4-R2
+the dog gives the cat that was kissed by the guy to the mouse . # N1-A1 N2-O1 N4-R1 N2-O2 N3-A2
+the dog gives the cat to the mouse that was kissed by the guy . # N1-A1 N2-O1 N3-R1 N3-O2 N4-A2
+the dog that was kissed by the guy gives to the mouse the cat . # N1-O1 N2-A1 N1-A2 N3-R2 N4-O2
+the dog gives to the mouse that was kissed by the guy the cat . # N1-A1 N2-R1 N4-O1 N2-O2 N3-A2
+the dog gives to the mouse the cat that was kissed by the guy . # N1-A1 N2-R1 N3-O1 N3-O2 N4-A2
+the dog that was kissed by the guy to the mouse gives the cat . # N1-O1 N2-A1 N1-A2 N3-R2 N4-O2
+the dog to the mouse that was kissed by the guy gives the cat . # N2-O1 N3-A1 N1-A2 N2-R2 N4-O2
+the dog to the mouse gives the cat that was kissed by the guy . # N1-A1 N2-R1 N3-O1 N3-O2 N4-A2
+the cat that kisses the girl was given by the dog to the mouse . # N1-A1 N2-O1 N1-O2 N3-A2 N4-R2
+the cat that the guy kisses was given by the dog to the mouse . # N1-O1 N2-A1 N1-O2 N3-A2 N4-R2
+the cat was given by the dog that kisses the girl to the mouse . # N1-O1 N2-A1 N4-R1 N2-A2 N3-O2
+the cat was given by the dog that the guy kisses to the mouse . # N1-O1 N2-A1 N4-R1 N2-O2 N3-A2
+the cat was given by the dog to the mouse that kisses the girl . # N1-O1 N2-A1 N3-R1 N3-A2 N4-O2
+the cat was given by the dog to the mouse that the guy kisses . # N1-O1 N2-A1 N3-R1 N3-O2 N4-A2
+the cat that kisses the girl was given to the mouse by the dog . # N1-A1 N2-O1 N1-O2 N3-R2 N4-A2
+the cat that the guy kisses was given to the mouse by the dog . # N1-O1 N2-A1 N1-O2 N3-R2 N4-A2
+the cat was given to the mouse that kisses the girl by the dog . # N1-O1 N2-R1 N4-A1 N2-A2 N3-O2
+the cat was given to the mouse that the guy kisses by the dog . # N1-O1 N2-R1 N4-A1 N2-O2 N3-A2
+the cat was given to the mouse by the dog that kisses the girl . # N1-O1 N2-R1 N3-A1 N3-A2 N4-O2
+the cat was given to the mouse by the dog that the guy kisses . # N1-O1 N2-R1 N3-A1 N3-O2 N4-A2
+the cat that kisses the girl by the dog was given to the mouse . # N1-A1 N2-O1 N1-O2 N3-A2 N4-R2
+the cat that the guy kisses by the dog was given to the mouse . # N1-O1 N2-A1 N1-O2 N3-A2 N4-R2
+the cat by the dog that kisses the girl was given to the mouse . # N2-A1 N3-O1 N1-O2 N2-A2 N4-R2
+the cat by the dog that the guy kisses was given to the mouse . # N2-O1 N3-A1 N1-O2 N2-A2 N4-R2
+the cat by the dog was given to the mouse that kisses the girl . # N1-O1 N2-A1 N3-R1 N3-A2 N4-O2
+the cat by the dog was given to the mouse that the guy kisses . # N1-O1 N2-A1 N3-R1 N3-O2 N4-A2
+the cat that kisses the girl by the dog to the mouse was given . # N1-A1 N2-O1 N1-O2 N3-A2 N4-R2
+the cat that the guy kisses by the dog to the mouse was given . # N1-O1 N2-A1 N1-O2 N3-A2 N4-R2
+the cat by the dog that kisses the girl to the mouse was given . # N2-A1 N3-O1 N1-O2 N2-A2 N4-R2
+the cat by the dog that the guy kisses to the mouse was given . # N2-O1 N3-A1 N1-O2 N2-A2 N4-R2
+the cat by the dog to the mouse that kisses the girl was given . # N3-A1 N4-O1 N1-O2 N2-A2 N3-R2
+the cat by the dog to the mouse that the guy kisses was given . # N3-O1 N4-A1 N1-O2 N2-A2 N3-R2
+the cat that kisses the girl to the mouse was given by the dog . # N1-A1 N2-O1 N1-O2 N3-R2 N4-A2
+the cat that the guy kisses to the mouse was given by the dog . # N1-O1 N2-A1 N1-O2 N3-R2 N4-A2
+the cat to the mouse that kisses the girl was given by the dog . # N2-A1 N3-O1 N1-O2 N2-R2 N4-A2
+the cat to the mouse that the guy kisses was given by the dog . # N2-O1 N3-A1 N1-O2 N2-R2 N4-A2
+the cat to the mouse was given by the dog that kisses the girl . # N1-O1 N2-R1 N3-A1 N3-A2 N4-O2
+the cat to the mouse was given by the dog that the guy kisses . # N1-O1 N2-R1 N3-A1 N3-O2 N4-A2
+the cat that kisses the girl to the mouse by the dog was given . # N1-A1 N2-O1 N1-O2 N3-R2 N4-A2
+the cat that the guy kisses to the mouse by the dog was given . # N1-O1 N2-A1 N1-O2 N3-R2 N4-A2
+the cat to the mouse that kisses the girl by the dog was given . # N2-A1 N3-O1 N1-O2 N2-R2 N4-A2
+the cat to the mouse that the guy kisses by the dog was given . # N2-O1 N3-A1 N1-O2 N2-R2 N4-A2
+the cat to the mouse by the dog that kisses the girl was given . # N3-A1 N4-O1 N1-O2 N2-R2 N3-A2
+the cat to the mouse by the dog that the guy kisses was given . # N3-O1 N4-A1 N1-O2 N2-R2 N3-A2
+by the beaver that the girl was kissed by the fish was cut . # N1-A1 N2-O1 N1-A2 N3-O2
+by the beaver the fish that the girl was kissed by was cut . # N2-A1 N3-O1 N1-A2 N2-O2
+cut by the beaver that was kissed by the guy was the fish . # N1-A1 N3-O1 N1-O2 N2-A2
+cut by the beaver was the fish that was kissed by the guy . # N1-A1 N2-O1 N2-O2 N3-A2
+the fish that was kissed by the guy was cut by the beaver . # N1-O1 N2-A1 N1-O2 N3-A2
+the fish was cut by the beaver that was kissed by the guy . # N1-O1 N2-A1 N2-O2 N3-A2
+give the cat that was kissed by the guy to the mouse , the dog did . # N1-O1 N3-R1 N4-A1 N1-O2 N2-A2
+give the cat to the mouse that was kissed by the guy , the dog did . # N1-O1 N2-R1 N4-A1 N2-O2 N3-A2
+give the cat to the mouse , the dog that was kissed by the guy did . # N1-O1 N2-R1 N3-A1 N3-O2 N4-A2
+the dog that the girl was kissed by gives the cat to the mouse . # N1-A1 N2-O1 N1-A2 N3-O2 N4-R2
+the dog gives the cat that the girl was kissed by to the mouse . # N1-A1 N2-O1 N4-R1 N2-A2 N3-O2
+the dog gives the cat to the mouse that the girl was kissed by . # N1-A1 N2-O1 N3-R1 N3-A2 N4-O2
+the dog that the girl was kissed by gives to the mouse the cat . # N1-A1 N2-O1 N1-A2 N3-R2 N4-O2
+the dog gives to the mouse that the girl was kissed by the cat . # N1-A1 N2-R1 N4-O1 N2-A2 N3-O2
+the dog gives to the mouse the cat that the girl was kissed by . # N1-A1 N2-R1 N3-O1 N3-A2 N4-O2
+by the dog that kisses the girl the cat was given to the mouse . # N1-A1 N2-O1 N1-A2 N3-O2 N4-R2
+by the dog that the guy kisses the cat was given to the mouse . # N1-O1 N2-A1 N1-A2 N3-O2 N4-R2
+by the dog the cat that kisses the girl was given to the mouse . # N2-A1 N3-O1 N1-A2 N2-O2 N4-R2
+by the dog the cat that the guy kisses was given to the mouse . # N2-O1 N3-A1 N1-A2 N2-O2 N4-R2
+by the dog the cat was given to the mouse that kisses the girl . # N1-A1 N2-O1 N3-R1 N3-A2 N4-O2
+by the dog the cat was given to the mouse that the guy kisses . # N1-A1 N2-O1 N3-R1 N3-O2 N4-A2
+by the dog that kisses the girl the cat to the mouse was given . # N1-A1 N2-O1 N1-A2 N3-O2 N4-R2
+by the dog that the guy kisses the cat to the mouse was given . # N1-O1 N2-A1 N1-A2 N3-O2 N4-R2
+by the dog the cat that kisses the girl to the mouse was given . # N2-A1 N3-O1 N1-A2 N2-O2 N4-R2
+by the dog the cat that the guy kisses to the mouse was given . # N2-O1 N3-A1 N1-A2 N2-O2 N4-R2
+by the dog the cat to the mouse that kisses the girl was given . # N3-A1 N4-O1 N1-A2 N2-O2 N3-R2
+by the dog the cat to the mouse that the guy kisses was given . # N3-O1 N4-A1 N1-A2 N2-O2 N3-R2
+the dog that the girl was kissed by to the mouse gives the cat . # N1-A1 N2-O1 N1-A2 N3-R2 N4-O2
+the dog to the mouse that the girl was kissed by gives the cat . # N2-A1 N3-O1 N1-A2 N2-R2 N4-O2
+the dog to the mouse gives the cat that the girl was kissed by . # N1-A1 N2-R1 N3-O1 N3-A2 N4-O2
+by the dog that kisses the girl to the mouse the cat was given . # N1-A1 N2-O1 N1-A2 N3-R2 N4-O2
+by the dog that the guy kisses to the mouse the cat was given . # N1-O1 N2-A1 N1-A2 N3-R2 N4-O2
+by the dog to the mouse that kisses the girl the cat was given . # N2-A1 N3-O1 N1-A2 N2-R2 N4-O2
+by the dog to the mouse that the guy kisses the cat was given . # N2-O1 N3-A1 N1-A2 N2-R2 N4-O2
+by the dog to the mouse the cat that kisses the girl was given . # N3-A1 N4-O1 N1-A2 N2-R2 N3-O2
+by the dog to the mouse the cat that the guy kisses was given . # N3-O1 N4-A1 N1-A2 N2-R2 N3-O2
+to the mouse that kisses the girl was given by the dog the cat . # N1-A1 N2-O1 N1-R2 N3-A2 N4-O2
+to the mouse that the guy kisses was given by the dog the cat . # N1-O1 N2-A1 N1-R2 N3-A2 N4-O2
+to the mouse was given by the dog that kisses the girl the cat . # N1-R1 N2-A1 N4-O1 N2-A2 N3-O2
+to the mouse was given by the dog that the guy kisses the cat . # N1-R1 N2-A1 N4-O1 N2-O2 N3-A2
+to the mouse was given by the dog the cat that kisses the girl . # N1-R1 N2-A1 N3-O1 N3-A2 N4-O2
+to the mouse was given by the dog the cat that the guy kisses . # N1-R1 N2-A1 N3-O1 N3-O2 N4-A2
+to the mouse that kisses the girl was given the cat by the dog . # N1-A1 N2-O1 N1-R2 N3-O2 N4-A2
+to the mouse that the guy kisses was given the cat by the dog . # N1-O1 N2-A1 N1-R2 N3-O2 N4-A2
+to the mouse was given the cat that kisses the girl by the dog . # N1-R1 N2-O1 N4-A1 N2-A2 N3-O2
+to the mouse was given the cat that the guy kisses by the dog . # N1-R1 N2-O1 N4-A1 N2-O2 N3-A2
+to the mouse was given the cat by the dog that kisses the girl . # N1-R1 N2-O1 N3-A1 N3-A2 N4-O2
+to the mouse was given the cat by the dog that the guy kisses . # N1-R1 N2-O1 N3-A1 N3-O2 N4-A2
+to the mouse that was kissed by the guy the dog gives the cat . # N1-O1 N2-A1 N1-R2 N3-A2 N4-O2
+to the mouse the dog that was kissed by the guy gives the cat . # N2-O1 N3-A1 N1-R2 N2-A2 N4-O2
+to the mouse the dog gives the cat that was kissed by the guy . # N1-R1 N2-A1 N3-O1 N3-O2 N4-A2
+to the mouse that kisses the girl by the dog the cat was given . # N1-A1 N2-O1 N1-R2 N3-A2 N4-O2
+to the mouse that the guy kisses by the dog the cat was given . # N1-O1 N2-A1 N1-R2 N3-A2 N4-O2
+to the mouse by the dog that kisses the girl the cat was given . # N2-A1 N3-O1 N1-R2 N2-A2 N4-O2
+to the mouse by the dog that the guy kisses the cat was given . # N2-O1 N3-A1 N1-R2 N2-A2 N4-O2
+to the mouse by the dog the cat that kisses the girl was given . # N3-A1 N4-O1 N1-R2 N2-A2 N3-O2
+to the mouse by the dog the cat that the guy kisses was given . # N3-O1 N4-A1 N1-R2 N2-A2 N3-O2
+to the mouse that kisses the girl the cat was given by the dog . # N1-A1 N2-O1 N1-R2 N3-O2 N4-A2
+to the mouse that the guy kisses the cat was given by the dog . # N1-O1 N2-A1 N1-R2 N3-O2 N4-A2
+to the mouse the cat that kisses the girl was given by the dog . # N2-A1 N3-O1 N1-R2 N2-O2 N4-A2
+to the mouse the cat that the guy kisses was given by the dog . # N2-O1 N3-A1 N1-R2 N2-O2 N4-A2
+to the mouse the cat was given by the dog that kisses the girl . # N1-R1 N2-O1 N3-A1 N3-A2 N4-O2
+to the mouse the cat was given by the dog that the guy kisses . # N1-R1 N2-O1 N3-A1 N3-O2 N4-A2
+to the mouse that kisses the girl the cat by the dog was given . # N1-A1 N2-O1 N1-R2 N3-O2 N4-A2
+to the mouse that the guy kisses the cat by the dog was given . # N1-O1 N2-A1 N1-R2 N3-O2 N4-A2
+to the mouse the cat that kisses the girl by the dog was given . # N2-A1 N3-O1 N1-R2 N2-O2 N4-A2
+to the mouse the cat that the guy kisses by the dog was given . # N2-O1 N3-A1 N1-R2 N2-O2 N4-A2
+to the mouse the cat by the dog that kisses the girl was given . # N3-A1 N4-O1 N1-R2 N2-O2 N3-A2
+to the mouse the cat by the dog that the guy kisses was given . # N3-O1 N4-A1 N1-R2 N2-O2 N3-A2
+cut by the beaver that the girl was kissed by was the fish . # N1-A1 N3-O1 N1-A2 N2-O2
+cut by the beaver was the fish that the girl was kissed by . # N1-A1 N2-O1 N2-A2 N3-O2
+the fish that the girl was kissed by was cut by the beaver . # N1-A1 N2-O1 N1-O2 N3-A2
+the fish was cut by the beaver that the girl was kissed by . # N1-O1 N2-A1 N2-A2 N3-O2
+given by the dog that was kissed by the guy was the cat to the mouse . # N1-A1 N3-O1 N4-R1 N1-O2 N2-A2
+given by the dog was the cat that was kissed by the guy to the mouse . # N1-A1 N2-O1 N4-R1 N2-O2 N3-A2
+given by the dog was the cat to the mouse that was kissed by the guy . # N1-A1 N2-O1 N3-R1 N3-O2 N4-A2
+given by the dog that was kissed by the guy to the mouse was the cat . # N1-A1 N3-R1 N4-O1 N1-O2 N2-A2
+given by the dog to the mouse that was kissed by the guy was the cat . # N1-A1 N2-R1 N4-O1 N2-O2 N3-A2
+given by the dog to the mouse was the cat that was kissed by the guy . # N1-A1 N2-R1 N3-O1 N3-O2 N4-A2
+given was the cat that was kissed by the guy by the dog to the mouse . # N1-O1 N3-A1 N4-R1 N1-O2 N2-A2
+given was the cat by the dog that was kissed by the guy to the mouse . # N1-O1 N2-A1 N4-R1 N2-O2 N3-A2
+given was the cat by the dog to the mouse that was kissed by the guy . # N1-O1 N2-A1 N3-R1 N3-O2 N4-A2
+give the cat that the girl was kissed by to the mouse , the dog did . # N1-O1 N3-R1 N4-A1 N1-A2 N2-O2
+give the cat to the mouse that the girl was kissed by , the dog did . # N1-O1 N2-R1 N4-A1 N2-A2 N3-O2
+give the cat to the mouse , the dog that the girl was kissed by did . # N1-O1 N2-R1 N3-A1 N3-A2 N4-O2
+given to the mouse that was kissed by the guy by the dog was the cat . # N1-R1 N3-A1 N4-O1 N1-O2 N2-A2
+given to the mouse by the dog that was kissed by the guy was the cat . # N1-R1 N2-A1 N4-O1 N2-O2 N3-A2
+given to the mouse by the dog was the cat that was kissed by the guy . # N1-R1 N2-A1 N3-O1 N3-O2 N4-A2
+given to the mouse that was kissed by the guy was the cat by the dog . # N1-R1 N3-O1 N4-A1 N1-O2 N2-A2
+given to the mouse was the cat that was kissed by the guy by the dog . # N1-R1 N2-O1 N4-A1 N2-O2 N3-A2
+given to the mouse was the cat by the dog that was kissed by the guy . # N1-R1 N2-O1 N3-A1 N3-O2 N4-A2
+the cat that was kissed by the guy was given by the dog to the mouse . # N1-O1 N2-A1 N1-O2 N3-A2 N4-R2
+the cat was given by the dog that was kissed by the guy to the mouse . # N1-O1 N2-A1 N4-R1 N2-O2 N3-A2
+the cat was given by the dog to the mouse that was kissed by the guy . # N1-O1 N2-A1 N3-R1 N3-O2 N4-A2
+the cat that was kissed by the guy was given to the mouse by the dog . # N1-O1 N2-A1 N1-O2 N3-R2 N4-A2
+the cat was given to the mouse that was kissed by the guy by the dog . # N1-O1 N2-R1 N4-A1 N2-O2 N3-A2
+the cat was given to the mouse by the dog that was kissed by the guy . # N1-O1 N2-R1 N3-A1 N3-O2 N4-A2
+the cat that was kissed by the guy by the dog was given to the mouse . # N1-O1 N2-A1 N1-O2 N3-A2 N4-R2
+the cat by the dog that was kissed by the guy was given to the mouse . # N2-O1 N3-A1 N1-O2 N2-A2 N4-R2
+the cat by the dog was given to the mouse that was kissed by the guy . # N1-O1 N2-A1 N3-R1 N3-O2 N4-A2
+the cat that was kissed by the guy by the dog to the mouse was given . # N1-O1 N2-A1 N1-O2 N3-A2 N4-R2
+the cat by the dog that was kissed by the guy to the mouse was given . # N2-O1 N3-A1 N1-O2 N2-A2 N4-R2
+the cat by the dog to the mouse that was kissed by the guy was given . # N3-O1 N4-A1 N1-O2 N2-A2 N3-R2
+the cat that was kissed by the guy to the mouse was given by the dog . # N1-O1 N2-A1 N1-O2 N3-R2 N4-A2
+the cat to the mouse that was kissed by the guy was given by the dog . # N2-O1 N3-A1 N1-O2 N2-R2 N4-A2
+the cat to the mouse was given by the dog that was kissed by the guy . # N1-O1 N2-R1 N3-A1 N3-O2 N4-A2
+the cat that was kissed by the guy to the mouse by the dog was given . # N1-O1 N2-A1 N1-O2 N3-R2 N4-A2
+the cat to the mouse that was kissed by the guy by the dog was given . # N2-O1 N3-A1 N1-O2 N2-R2 N4-A2
+the cat to the mouse by the dog that was kissed by the guy was given . # N3-O1 N4-A1 N1-O2 N2-R2 N3-A2
+to the mouse that the girl was kissed by the dog gives the cat . # N1-A1 N2-O1 N1-R2 N3-A2 N4-O2
+to the mouse the dog that the girl was kissed by gives the cat . # N2-A1 N3-O1 N1-R2 N2-A2 N4-O2
+to the mouse the dog gives the cat that the girl was kissed by . # N1-R1 N2-A1 N3-O1 N3-A2 N4-O2
+given by the dog that the girl was kissed by was the cat to the mouse . # N1-A1 N3-O1 N4-R1 N1-A2 N2-O2
+given by the dog was the cat that the girl was kissed by to the mouse . # N1-A1 N2-O1 N4-R1 N2-A2 N3-O2
+given by the dog was the cat to the mouse that the girl was kissed by . # N1-A1 N2-O1 N3-R1 N3-A2 N4-O2
+given by the dog that the girl was kissed by to the mouse was the cat . # N1-A1 N3-R1 N4-O1 N1-A2 N2-O2
+given by the dog to the mouse that the girl was kissed by was the cat . # N1-A1 N2-R1 N4-O1 N2-A2 N3-O2
+given by the dog to the mouse was the cat that the girl was kissed by . # N1-A1 N2-R1 N3-O1 N3-A2 N4-O2
+given was the cat that the girl was kissed by by the dog to the mouse . # N1-O1 N3-A1 N4-R1 N1-A2 N2-O2
+given was the cat by the dog that the girl was kissed by to the mouse . # N1-O1 N2-A1 N4-R1 N2-A2 N3-O2
+given was the cat by the dog to the mouse that the girl was kissed by . # N1-O1 N2-A1 N3-R1 N3-A2 N4-O2
+given to the mouse that the girl was kissed by by the dog was the cat . # N1-R1 N3-A1 N4-O1 N1-A2 N2-O2
+given to the mouse by the dog that the girl was kissed by was the cat . # N1-R1 N2-A1 N4-O1 N2-A2 N3-O2
+given to the mouse by the dog was the cat that the girl was kissed by . # N1-R1 N2-A1 N3-O1 N3-A2 N4-O2
+given to the mouse that the girl was kissed by was the cat by the dog . # N1-R1 N3-O1 N4-A1 N1-A2 N2-O2
+given to the mouse was the cat that the girl was kissed by by the dog . # N1-R1 N2-O1 N4-A1 N2-A2 N3-O2
+given to the mouse was the cat by the dog that the girl was kissed by . # N1-R1 N2-O1 N3-A1 N3-A2 N4-O2
+by the dog that was kissed by the guy the cat was given to the mouse . # N1-O1 N2-A1 N1-A2 N3-O2 N4-R2
+by the dog the cat that was kissed by the guy was given to the mouse . # N2-O1 N3-A1 N1-A2 N2-O2 N4-R2
+by the dog the cat was given to the mouse that was kissed by the guy . # N1-A1 N2-O1 N3-R1 N3-O2 N4-A2
+by the dog that was kissed by the guy the cat to the mouse was given . # N1-O1 N2-A1 N1-A2 N3-O2 N4-R2
+by the dog the cat that was kissed by the guy to the mouse was given . # N2-O1 N3-A1 N1-A2 N2-O2 N4-R2
+by the dog the cat to the mouse that was kissed by the guy was given . # N3-O1 N4-A1 N1-A2 N2-O2 N3-R2
+by the dog that was kissed by the guy to the mouse the cat was given . # N1-O1 N2-A1 N1-A2 N3-R2 N4-O2
+by the dog to the mouse that was kissed by the guy the cat was given . # N2-O1 N3-A1 N1-A2 N2-R2 N4-O2
+by the dog to the mouse the cat that was kissed by the guy was given . # N3-O1 N4-A1 N1-A2 N2-R2 N3-O2
+the cat that the girl was kissed by was given by the dog to the mouse . # N1-A1 N2-O1 N1-O2 N3-A2 N4-R2
+the cat was given by the dog that the girl was kissed by to the mouse . # N1-O1 N2-A1 N4-R1 N2-A2 N3-O2
+the cat was given by the dog to the mouse that the girl was kissed by . # N1-O1 N2-A1 N3-R1 N3-A2 N4-O2
+the cat that the girl was kissed by was given to the mouse by the dog . # N1-A1 N2-O1 N1-O2 N3-R2 N4-A2
+the cat was given to the mouse that the girl was kissed by by the dog . # N1-O1 N2-R1 N4-A1 N2-A2 N3-O2
+the cat was given to the mouse by the dog that the girl was kissed by . # N1-O1 N2-R1 N3-A1 N3-A2 N4-O2
+the cat that the girl was kissed by by the dog was given to the mouse . # N1-A1 N2-O1 N1-O2 N3-A2 N4-R2
+the cat by the dog that the girl was kissed by was given to the mouse . # N2-A1 N3-O1 N1-O2 N2-A2 N4-R2
+the cat by the dog was given to the mouse that the girl was kissed by . # N1-O1 N2-A1 N3-R1 N3-A2 N4-O2
+the cat that the girl was kissed by by the dog to the mouse was given . # N1-A1 N2-O1 N1-O2 N3-A2 N4-R2
+the cat by the dog that the girl was kissed by to the mouse was given . # N2-A1 N3-O1 N1-O2 N2-A2 N4-R2
+the cat by the dog to the mouse that the girl was kissed by was given . # N3-A1 N4-O1 N1-O2 N2-A2 N3-R2
+the cat that the girl was kissed by to the mouse was given by the dog . # N1-A1 N2-O1 N1-O2 N3-R2 N4-A2
+the cat to the mouse that the girl was kissed by was given by the dog . # N2-A1 N3-O1 N1-O2 N2-R2 N4-A2
+the cat to the mouse was given by the dog that the girl was kissed by . # N1-O1 N2-R1 N3-A1 N3-A2 N4-O2
+the cat that the girl was kissed by to the mouse by the dog was given . # N1-A1 N2-O1 N1-O2 N3-R2 N4-A2
+the cat to the mouse that the girl was kissed by by the dog was given . # N2-A1 N3-O1 N1-O2 N2-R2 N4-A2
+the cat to the mouse by the dog that the girl was kissed by was given . # N3-A1 N4-O1 N1-O2 N2-R2 N3-A2
+to the mouse that was kissed by the guy was given by the dog the cat . # N1-O1 N2-A1 N1-R2 N3-A2 N4-O2
+to the mouse was given by the dog that was kissed by the guy the cat . # N1-R1 N2-A1 N4-O1 N2-O2 N3-A2
+to the mouse was given by the dog the cat that was kissed by the guy . # N1-R1 N2-A1 N3-O1 N3-O2 N4-A2
+to the mouse that was kissed by the guy was given the cat by the dog . # N1-O1 N2-A1 N1-R2 N3-O2 N4-A2
+to the mouse was given the cat that was kissed by the guy by the dog . # N1-R1 N2-O1 N4-A1 N2-O2 N3-A2
+to the mouse was given the cat by the dog that was kissed by the guy . # N1-R1 N2-O1 N3-A1 N3-O2 N4-A2
+to the mouse that was kissed by the guy by the dog the cat was given . # N1-O1 N2-A1 N1-R2 N3-A2 N4-O2
+to the mouse by the dog that was kissed by the guy the cat was given . # N2-O1 N3-A1 N1-R2 N2-A2 N4-O2
+to the mouse by the dog the cat that was kissed by the guy was given . # N3-O1 N4-A1 N1-R2 N2-A2 N3-O2
+to the mouse that was kissed by the guy the cat was given by the dog . # N1-O1 N2-A1 N1-R2 N3-O2 N4-A2
+to the mouse the cat that was kissed by the guy was given by the dog . # N2-O1 N3-A1 N1-R2 N2-O2 N4-A2
+to the mouse the cat was given by the dog that was kissed by the guy . # N1-R1 N2-O1 N3-A1 N3-O2 N4-A2
+to the mouse that was kissed by the guy the cat by the dog was given . # N1-O1 N2-A1 N1-R2 N3-O2 N4-A2
+to the mouse the cat that was kissed by the guy by the dog was given . # N2-O1 N3-A1 N1-R2 N2-O2 N4-A2
+to the mouse the cat by the dog that was kissed by the guy was given . # N3-O1 N4-A1 N1-R2 N2-O2 N3-A2
+by the dog that the girl was kissed by the cat was given to the mouse . # N1-A1 N2-O1 N1-A2 N3-O2 N4-R2
+by the dog the cat that the girl was kissed by was given to the mouse . # N2-A1 N3-O1 N1-A2 N2-O2 N4-R2
+by the dog the cat was given to the mouse that the girl was kissed by . # N1-A1 N2-O1 N3-R1 N3-A2 N4-O2
+by the dog that the girl was kissed by the cat to the mouse was given . # N1-A1 N2-O1 N1-A2 N3-O2 N4-R2
+by the dog the cat that the girl was kissed by to the mouse was given . # N2-A1 N3-O1 N1-A2 N2-O2 N4-R2
+by the dog the cat to the mouse that the girl was kissed by was given . # N3-A1 N4-O1 N1-A2 N2-O2 N3-R2
+by the dog that the girl was kissed by to the mouse the cat was given . # N1-A1 N2-O1 N1-A2 N3-R2 N4-O2
+by the dog to the mouse that the girl was kissed by the cat was given . # N2-A1 N3-O1 N1-A2 N2-R2 N4-O2
+by the dog to the mouse the cat that the girl was kissed by was given . # N3-A1 N4-O1 N1-A2 N2-R2 N3-O2
+to the mouse that the girl was kissed by was given by the dog the cat . # N1-A1 N2-O1 N1-R2 N3-A2 N4-O2
+to the mouse was given by the dog that the girl was kissed by the cat . # N1-R1 N2-A1 N4-O1 N2-A2 N3-O2
+to the mouse was given by the dog the cat that the girl was kissed by . # N1-R1 N2-A1 N3-O1 N3-A2 N4-O2
+to the mouse that the girl was kissed by was given the cat by the dog . # N1-A1 N2-O1 N1-R2 N3-O2 N4-A2
+to the mouse was given the cat that the girl was kissed by by the dog . # N1-R1 N2-O1 N4-A1 N2-A2 N3-O2
+to the mouse was given the cat by the dog that the girl was kissed by . # N1-R1 N2-O1 N3-A1 N3-A2 N4-O2
+to the mouse that the girl was kissed by by the dog the cat was given . # N1-A1 N2-O1 N1-R2 N3-A2 N4-O2
+to the mouse by the dog that the girl was kissed by the cat was given . # N2-A1 N3-O1 N1-R2 N2-A2 N4-O2
+to the mouse by the dog the cat that the girl was kissed by was given . # N3-A1 N4-O1 N1-R2 N2-A2 N3-O2
+to the mouse that the girl was kissed by the cat was given by the dog . # N1-A1 N2-O1 N1-R2 N3-O2 N4-A2
+to the mouse the cat that the girl was kissed by was given by the dog . # N2-A1 N3-O1 N1-R2 N2-O2 N4-A2
+to the mouse the cat was given by the dog that the girl was kissed by . # N1-R1 N2-O1 N3-A1 N3-A2 N4-O2
+to the mouse that the girl was kissed by the cat by the dog was given . # N1-A1 N2-O1 N1-R2 N3-O2 N4-A2
+to the mouse the cat that the girl was kissed by by the dog was given . # N2-A1 N3-O1 N1-R2 N2-O2 N4-A2
+to the mouse the cat by the dog that the girl was kissed by was given . # N3-A1 N4-O1 N1-R2 N2-O2 N3-A2

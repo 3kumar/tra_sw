@@ -1,0 +1,45 @@
+john threw the ball . then he caught it . # N1-A1 N2-O1 N1-A2 N2-O2
+the ball was thrown by john . then he caught it . # N2-A1 N1-O1 N2-A2 N1-O2
+john put the apple on the table . then he ate it . # N1-A1 N2-O1 N3-R1 N1-A2 N2-O2
+the apple was put on the table by john . then he ate it . # N3-A1 N1-O1 N2-R1 N3-A2 N1-O2
+it was on the table that john put the apple . then he ate it . # N2-A1 N3-O1 N1-R1 N2-A2 N3-O2
+john ate the apple . # N1-A1 N2-O1
+the cat was chased by john . # N2-A1 N1-O1
+john put the apple on the table . # N1-A1 N2-O1 N3-R1
+the cup was put on the table by john . # N3-A1 N1-O1 N2-R1
+it was on the desk that john put the cup . # N2-A1 N3-O1 N1-R1
+john chased the dog . then it bit him . # N1-A1 N2-O1 N2-A2 N1-O2
+the dog was chased by john . then it bit him . # N2-A1 N1-O1 N1-A2 N2-O2
+john hit the ball on the head . then it hurt him . # N1-A1 N2-O1 N3-R1 N2-A2 N1-O2
+the ball was hit on the head by john . then it hurt him . # N3-A1 N1-O1 N2-R1 N1-A2 N3-O2
+it was on the head that john hit the ball . then it hurt him . # N2-A1 N3-O1 N1-R1 N3-A2 N2-O2
+the man pushed the ball . # N1-A1 N2-O1
+the ball was pushed by the man . # N1-O1 N2-A1
+the man gave the book to the boy . # N1-A1 N2-O1 N3-R1
+the book was given to the boy by the man . # N3-A1 N1-O1 N2-R1
+the man gave the boy the book . # N1-A1 N3-O1 N2-R1
+the dog that chased the cat ate the rat . # N1-A1 N2-O1 N1-A2 N3-O2
+the dog was chased by the man that broke the glass . # N2-A1 N1-O1 N2-A2 N3-O2
+the ball that hit the boy was given by the man . # N1-A1 N2-O1 N3-A2 N1-O2
+the man took the ball that hit the glass . # N1-A1 N2-O1 N2-A2 N3-O2
+the ball that was given by the man hit the glass . # N2-A1 N1-O1 N1-A2 N3-O2
+the glass was hit by the ball that was given by the man . # N2-A1 N1-O1 N3-A2 N2-O2
+the ball that was caught by the boy was thrown by the man . # N2-A1 N1-O1 N3-A2 N1-O2
+the boy caught the ball that was thrown by the man . # N1-A1 N2-O1 N3-A2 N2-O2
+the ball was given to the boy by the cat that ate the rat . # N3-A1 N1-O1 N2-R1 N3-A2 N4-O2
+the ball that hit the car was given to the boy by the man . # N1-A1 N2-O1 N4-A2 N1-O2 N3-R2
+the man gave the ball to the boy that hit the car . # N1-A1 N2-O1 N3-R1 N3-A2 N4-O2
+the dog was taken from the vet to the man that chased the cat . # N2-A1 N1-O1 N3-R1 N3-A2 N4-O2
+the man that was kissed by the girl gave the ball to the boy . # N2-A1 N1-O1 N1-A2 N3-O2 N4-R2
+the man gave the rat to the cat that was chased by the dog . # N1-A1 N2-O1 N3-R1 N4-A2 N3-O2
+the man that gave the ball to the boy hit the car . # N1-A1 N2-O1 N3-R1 N1-A2 N4-O2
+the cat was chased by the dog that took the rat to the man . # N2-A1 N1-O1 N2-A2 N3-O2 N4-R2
+the man hit the dog that gave the rat to the cat . # N1-A1 N2-O1 N2-A2 N3-O2 N4-R2
+the dog that gave the rat to the cat was hit by the man . # N1-A1 N2-O1 N3-R1 N4-A2 N1-O2
+the ball that was thrown to the boy by the man broke the glass . # N3-A1 N1-O1 N2-R1 N1-A2 N4-O2
+the dog ate the rat that was given by the man to the cat . # N1-A1 N2-O1 N3-A2 N2-O2 N4-R2
+the man that chased the dog gave the rat to the cat . # N1-A1 N2-O1 N1-A2 N3-O2 N4-R2
+the cat that the dog chased bit the man . # N1-O1 N1-A2 N2-A1 N3-O2
+the cat that the man chased was bitten by the dog . # N1-O1 N1-O2 N2-A1 N3-A2
+the boy that the man bit gave the ball to the girl . # N1-O1 N2-A1 N1-A2 N2-A2 N3-O2 N4-R2
+the dog that the man chased gave the cat the rat . # N1-O1 N2-A1 N1-A2 N2-A2 N3-R2 N4-O2
